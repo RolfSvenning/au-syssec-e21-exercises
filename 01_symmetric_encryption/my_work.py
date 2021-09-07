@@ -1,6 +1,7 @@
 from ppmcrypt import PPMImage
 
 dk_relative_path = "au-syssec-e21-exercises/01_symmetric_encryption/dk.ppm"
+
 image = PPMImage.load_from_file(open(dk_relative_path, 'rb'))
 print(f'image width: {image.width} px')
 print(f'image height: {image.height} px')
