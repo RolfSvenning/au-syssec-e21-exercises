@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode
@@ -6,6 +7,8 @@
 # au-syssec-e21-exercises/
 
 ### Python ###
+=======
+>>>>>>> upstream/master
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -144,6 +147,7 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+<<<<<<< HEAD
 
 ### VisualStudioCode ###
 .vscode/*
@@ -162,3 +166,5 @@ cython_debug/
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
+=======
+>>>>>>> upstream/master
