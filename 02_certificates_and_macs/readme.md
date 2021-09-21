@@ -24,8 +24,18 @@ standardized version instead.
 
 To illustrate how public-key certificates work, in this task we will manually
 verify an X.509 web server certificate using the issuer's public key. You will
-need OpenSSL installed, which is already the case for Ubuntu. This exercise is
-heavily inspired on [SEED Project's PKI Lab](https://seedsecuritylabs.org/Labs_20.04/Crypto/Crypto_PKI/).
+need OpenSSL installed, which is already the case for Ubuntu.
+You can find details about the `openssl` command line tool on its
+[manpages](https://man.archlinux.org/man/core/openssl/openssl.1ssl.en).
+It contains a lot of functionality and in this exercise, we will
+use the subcommands
+[`s_client`](https://man.archlinux.org/man/s_client.1ssl.en),
+[`verify`](https://man.archlinux.org/man/verify.1ssl.en),
+[`x509`](https://man.archlinux.org/man/x509.1ssl.en), and
+[`asn1parse`](https://man.archlinux.org/man/asn1parse.1ssl.en)
+as described below.
+The exercise is heavily inspired on [SEED Project's PKI
+Lab](https://seedsecuritylabs.org/Labs_20.04/Crypto/Crypto_PKI/).
 
 1. Choose a hostname (e.g. twitter.com or cs.au.dk) and download the server certificate. You
    can use a browser or command-line OpenSSL:
@@ -45,6 +55,8 @@ $ openssl s_client -connect <hostname>:443 -showcerts
 3. Find the CA from the output above and search the root certificate in the
    local trusted storage `/etc/ssl/certs`. Copy it to the local folder you are
    working on under the name `cert_n.pem`.
+
+   Note that the Let's Encrypt chain used to verify cs.au.dk is [a bit more complicated](https://letsencrypt.org/certificates/).
 
 4. Verify the certificate chains by specifying the root CA and the server
    certificate in the `openssl verify` command. For example, with 2
@@ -94,7 +106,7 @@ $ sha256sum cert0_body.bin
    of the result (the rest is padding):
 
 ```
->>> pow(Signature, Exponent, Modulus)
+>>> hex(pow(Signature, Exponent, Modulus))
 ```
 
 10. Now repeat the same procedure for the next certificate in the chain until
