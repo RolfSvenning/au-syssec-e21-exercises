@@ -136,7 +136,7 @@ is accessing.
 <details>
 <summary>Hint 2</summary>
 
-You can use the command [`ls -s <name of file> <name of
+You can use the command [`ln -s <name of file> <name of
 link>`](https://man.archlinux.org/man/ln.1) to create symbolic links to
 arbitrary files.
 
@@ -376,3 +376,9 @@ and the address stays the same in each execution.
 If everything works, you should land in a newly spawned shell (the `cat` is
 necessary to prevent the shell from getting immediately closed again).
 Try executing commands.
+
+
+
+## Solutions
+
+See [here](solutions.md) for example solutions.
